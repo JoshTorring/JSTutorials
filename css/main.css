@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap');
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+.nowrap {
+    text-wrap: nowrap;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--BG-COLOR);
+    color: var(--TEXT-COLOR);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+:root {
+    /* UTILITY */
+    --APP-WIDTH: 1000px;
+
+
+    /* COLORS */
+    --BG-COLOR: #121115;
+    --TEXT-COLOR: #f3e8d6;
+    --BTN-COLOR: #5688C7;
+    --BTN-HVR-COLOR: #7eb0ee;
+    --QT-BG-COLOR: #000000;
+    --SELECT-BG-COLOR: #f3e8d6;
+}
+
+.quote-form {
+    display: grid;
+    width: var(--APP-WIDTH);
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+        "ct ct"
+        "cs sb"
+        "qb qb"
+        "ab ab";
+    margin-bottom: 1vh;
+}
+
+.category-select-text {
+    grid-area: ct;
+    font-size: 8.3rem;
+    font-weight: bolder;
+}
+
+.category-select {
+    grid-area: cs;
+    margin-right: 0.5vw;
+    font-weight: 600;
+    text-align-last: center;
+    -moz-text-align-last: center; /* For Firefox */
+    background-color: var(--SELECT-BG-COLOR);
+}
+
+.category-select option {
+    font-weight: 600;
+    background-color: var(--SELECT-BG-COLOR);
+    color: var(--BG-COLOR); /* Text color for options */
+    scrollbar-width: 0;
+}
+
+.submit-btn {
+    grid-area: sb;
+}
+
+.category-select, .submit-btn {
+    height: 4rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+.submit-btn {
+    display: grid;
+    margin-left: 0.5vw;
+    place-content: center;
+    background-color: var(--BTN-COLOR);
+    color: var(--BG-COLOR);
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: var(--BTN-HVR-COLOR);
+}
+
+.quote-display {
+    grid-area: qb;
+    height: 20rem;
+    text-align: center;
+}
+
+.author-display {
+    grid-area: ab;
+    margin-top: 1vh;
+    height: 4rem;
+    text-align: right;
+}
+
+.quote-display, .author-display {
+    display: grid;
+    align-content: center;
+    padding: 20px;
+    background-color: var(--QT-BG-COLOR);
+    border-radius: 5px;
+    width: var(--APP-WIDTH);
+    font-family: 'Merriweather', serif;
+    font-size: 1.5rem;
+}
